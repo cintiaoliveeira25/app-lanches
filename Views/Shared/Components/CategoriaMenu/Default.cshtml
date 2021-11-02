@@ -1,0 +1,15 @@
+﻿<div class="dropdown bg-dark">
+    <a asp-controller="Lanche" asp-action="List" class="dropdown-toggle" data-toggle="dropdown" style="color: white; text-decoration: none">Lanches</a>
+    <ul class="dropdown-menu dropdown-menu-dark" style="background: #343A40; padding-left: 5px">
+        @foreach (var categoria in Model)
+        {
+            <li>
+                <a asp-controller="Lanche" asp-action="List" style="color: white; text-decoration: none"
+                   asp-route-categoria="@categoria.CategoriaNome">@categoria.CategoriaNome</a>
+            </li>
+        }
+        <li>
+            <a asp-controller="Lanche" asp-action="List" asp-route-categoria="" style="color: white; text-decoration: none">Todos os Lanches</a>
+        </li>
+    </ul>
+</div>
